@@ -7,19 +7,19 @@
  */
 void rotr(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
-    stack_t *tmp;
+	stack_t *tmp;
 
-    if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-        return;
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return;
 
-    tmp = *stack;
+	tmp = *stack;
 
-    while (tmp->next != NULL)
-        tmp = tmp->next;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
 
-    tmp->next = *stack;
-    tmp->prev->next = NULL;
-    tmp->prev = NULL;
-    (*stack)->prev = tmp;
-    (*stack) = tmp;
+	tmp->next = *stack;
+	tmp->prev->next = NULL;
+	tmp->prev = NULL;
+	(*stack)->prev = tmp;
+	(*stack) = tmp;
 }
